@@ -26,179 +26,141 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar" style="background-color: #1d5d9b">
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #1d5d9b"
+    >
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold ms-3" style="color: #f4d160" href="#"
-          >Laporan Kinerja Guru</a>
+        <a class="navbar-brand fw-bold" style="color: #f4d160" href="#"
+          >Laporan Kinerja Guru</a
+        >
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container mb-5">
+
+    <div class="container mt-5">
       <div class="row">
         <div class="col">
           <div class="row mb-4">
             <div class="col">
-              <label
-                class="fw-bold fs-1 mt-4 d-flex align-items-center justify-content-center"
-                >Kegiatan Anda Hari Ini</label
-              >
+              <label class="fw-bold fs-1 mt-4">Kegiatan Anda Hari Ini</label>
             </div>
           </div>
           <div class="card mt-4">
             <div class="card-body">
-              <div class="container">
-                <form
-                  action="https://script.google.com/macros/s/AKfycbwFtynmwEWAfGNDYeSvBNlX2ctSmmqNQYiYBF_iADKP-sxzZQf8SCl4-6PsCgTlRkj7/exec"
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-4">
-                        <label for="no" class="form-label fw-bold">ID</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="no"
-                          name="no"
-                        />
-                      </div>
-                      <div class="mb-4">
-                        <label for="nama" class="form-label fw-bold"
-                          >Nama Kegiatan</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="nama"
-                          name="nama"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-4">
-                        <label for="jenis" class="form-label fw-bold"
-                          >Pilih Jenis Kegiatan</label
-                        >
-                        <select
-                          name="jenis"
-                          class="form-control"
-                          id="jenis"
-                          required
-                        >
-                          <option value="kbm">KBM</option>
-                          <option value="nonkbm">Non KBM</option>
-                        </select>
-                      </div>
-                      <div class="mb-4">
-                        <label for="tgl_kgt" class="form-label fw-bold"
-                          >Tanggal Kegiatan</label
-                        >
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="tgl_kgt"
-                          name="tgl_kgt"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="mb-4">
-                      <label for="uraian" class="form-label fw-bold"
-                        >Uraian Kegiatan</label
-                      >
-                      <textarea
-                        type="text"
-                        rows="5"
-                        class="form-control"
-                        id="uraian"
-                        name="uraian"
-                        required
-                      >
-                      </textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="mb-4">
-                      <label for="target" class="form-label fw-bold"
-                        >Target Capaian</label
-                      >
-                      <textarea
-                        type="text"
-                        rows="5"
-                        class="form-control"
-                        id="target"
-                        name="target"
-                        required
-                      >
-                      </textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="mb-4">
-                      <label for="buktis" class="form-label fw-bold"
-                        >Bukti Kegiatan:</label
-                      >
-                      <input
-                        type="file"
-                        name="buktis"
-                        id="buktis"
-                        accept="image/*"
-                      />
-                      <input type="hidden" id="buktisEnc" name="buktisEnc" />
-                      <!-- Script JavaScript untuk mengenkripsi gambar menjadi base64 -->
-                      <script>
-                        document
-                          .getElementById("buktis")
-                          .addEventListener("change", function (event) {
-                            var file = event.target.files[0];
-                            var reader = new FileReader();
-                            reader.onloadend = function () {
-                              document.getElementById("buktisEnc").value =
-                                reader.result.split(",")[1];
-                            };
-                            reader.readAsDataURL(file);
-                          });
-                      </script>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <button
-                        class="btn text-light mt-2 me-3"
-                        style="background-color: #1d5d9b"
-                        type="submit"
-                      >
-                        Simpan
-                      </button>
-                      <button
-                        class="btn btn-danger text-light mt-2"
-                        type="reset"
-                      >
-                        Reset
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              <form
+                action="https://script.google.com/macros/s/AKfycbwFtynmwEWAfGNDYeSvBNlX2ctSmmqNQYiYBF_iADKP-sxzZQf8SCl4-6PsCgTlRkj7/exec"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="mb-4">
+                  <label for="no" class="form-label fw-bold">ID</label>
+                  <input type="number" class="form-control" id="no" name="no" />
+                </div>
+                <div class="mb-4">
+                  <label for="nama" class="form-label fw-bold"
+                    >Nama Kegiatan</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nama"
+                    name="nama"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="jenis" class="form-label fw-bold"
+                    >Pilih Jenis Kegiatan</label
+                  >
+                  <select name="jenis" class="form-control" id="jenis" required>
+                    <option value="kbm">KBM</option>
+                    <option value="nonkbm">Non KBM</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="tgl_kgt" class="form-label fw-bold"
+                    >Tanggal Kegiatan</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="tgl_kgt"
+                    name="tgl_kgt"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="uraian" class="form-label fw-bold"
+                    >Uraian Kegiatan</label
+                  >
+                  <textarea
+                    type="text"
+                    rows="5"
+                    class="form-control"
+                    id="uraian"
+                    name="uraian"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-4">
+                  <label for="target" class="form-label fw-bold"
+                    >Target Capaian</label
+                  >
+                  <textarea
+                    type="text"
+                    rows="5"
+                    class="form-control"
+                    id="target"
+                    name="target"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-4">
+                  <label for="buktis" class="form-label fw-bold"
+                    >Bukti Kegiatan:</label
+                  >
+                  <input
+                    type="file"
+                    name="buktis"
+                    id="buktis"
+                    accept="image/*"
+                  />
+                  <input type="hidden" id="buktisEnc" name="buktisEnc" />
+                  <!-- Script JavaScript untuk mengenkripsi gambar menjadi base64 -->
+                  <script>
+                    document
+                      .getElementById("buktis")
+                      .addEventListener("change", function (event) {
+                        var file = event.target.files[0];
+                        var reader = new FileReader();
+                        reader.onloadend = function () {
+                          document.getElementById("buktisEnc").value =
+                            reader.result.split(",")[1];
+                        };
+                        reader.readAsDataURL(file);
+                      });
+                  </script>
+                </div>
+                <div class="mb-4">
+                  <button class="btn btn-primary me-3" type="submit">
+                    Simpan
+                  </button>
+                  <button class="btn btn-danger" type="reset">Reset</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <footer
-      class="text-center position-bottom"
-      style="background-color: #1d5d9b"
+      class="text-center"
+      style="background-color: #1d5d9b; color: #f4d160"
     >
-      <div class="row">
-        <div class="col py-1 mt-3">
-          <p style="text-align: center; color: #f4d160">
-            coppyright @anin 2023
-          </p>
-        </div>
+      <div class="container py-3">
+        <p>coppyright @anin 2023</p>
       </div>
     </footer>
 
